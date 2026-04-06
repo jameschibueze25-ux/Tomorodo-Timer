@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomorodo Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1 class="logo">Tomorodo</h1>
+
+        <div class="mode-tabs">
+            <button class="tab active" data-mode="focus" data-time="1500">Focus</button>
+            <button class="tab" data-mode="short" data-time="300">Short Break</button>
+            <button class="tab" data-mode="long" data-time="900">Long Break</button>
+        </div>
+
+        <div class="timer-card">
+            <div class="ring-container">
+                <svg class="ring" viewBox="0 0 280 280">
+                    <circle class="ring-bg" cx="140" cy="140" r="120"/>
+                    <circle class="ring-progress" id="ring-progress" cx="140" cy="140" r="120"/>
+                </svg>
+                <div class="timer-display">
+                    <span id="timer">25:00</span>
+                    <span class="mode-label" id="mode-label">Focus Time</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn-icon btn-reset" id="reset" title="Reset">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                        <path d="M3 3v5h5"/>
+                    </svg>
+                </button>
+                <button class="btn-start" id="start-pause">Start</button>
+                <button class="btn-icon btn-skip" id="skip" title="Skip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 4 15 12 5 20 5 4"/>
+                        <line x1="19" y1="5" x2="19" y2="19"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="session-tracker">
+            <span class="session-label">Session</span>
+            <div class="session-dots" id="session-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
